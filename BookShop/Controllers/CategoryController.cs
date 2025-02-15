@@ -1,6 +1,7 @@
 ﻿using BookShop.Data;
 using BookShop.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookShop.Controllers
 {
@@ -18,6 +19,25 @@ namespace BookShop.Controllers
         }
 
         public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create(Category category)
+        {
+            if (category == null) return BadRequest();
+
+            _db.Categories.Add(category);
+            await _db.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Edit() 
+        {
+            return View();
+        }
+        public IActionResult Delete()
         {
             return View();
         }
