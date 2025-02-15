@@ -1,1 +1,33 @@
-﻿<h1>Category List</h1>
+﻿@model List<Category>
+
+<div class="container">
+    <div class="row pt-4 pd-3">
+        <div class="col-6">
+            <h2 class="text-primary">Category List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Category" asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-plus-cirle"></i>Create New Category
+            </a>
+        </div>
+    </div>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>Category Name</th>
+        <th>Display Order</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var objCategoryList in Model)
+    {
+        <tr>
+            <td>@objCategoryList.Name</td>
+            <td>@objCategoryList.DisplayOrder</td>
+            <td>
+                <a href="@Url.Action("Edit", "Category", new { id = objCategoryList.Id })">Edit</a> |
+                <a href="@Url.Action("Delete", "Category", new { id = objCategoryList.Id })">Delete</a>
+            </td>
+        </tr>
+    }
+    </tr>
+</table>
+</div>

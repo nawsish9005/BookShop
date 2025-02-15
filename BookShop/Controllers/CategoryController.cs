@@ -1,4 +1,5 @@
 ﻿using BookShop.Data;
+using BookShop.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookShop.Controllers
@@ -11,6 +12,12 @@ namespace BookShop.Controllers
             _db = db;
         }
         public IActionResult Index()
+        {
+            List<Category> objCategoryList = _db.Categories.ToList();
+            return View(objCategoryList);
+        }
+
+        public IActionResult Create()
         {
             return View();
         }
