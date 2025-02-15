@@ -25,12 +25,21 @@ namespace BookShop.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Category category)
         {
-            if (category == null) return BadRequest();
-
-            _db.Categories.Add(category);
-            await _db.SaveChangesAsync();
-
-            return RedirectToAction("Index");
+            if(category.Name==category.DisplayOrder.ToString())
+            {
+                ModelState.AddModelError("DisplayOrder", "Display Order must be different from Category Name");
+            }
+            //if(category.Name!=null && category.Name.ToLower()=="test")
+            //{
+            //       ModelState.AddModelError("", "Test is an invalid value");
+            //}
+            if (ModelState.IsValid)
+            {
+                _db.Categories.Add(category);
+                await _db.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return View();
         }
 
         public IActionResult Edit() 
