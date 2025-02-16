@@ -37,6 +37,7 @@ namespace BookShop.Controllers
             {
                 _db.Categories.Add(category);
                 await _db.SaveChangesAsync();
+                TempData["success"] = "Category created successfully";
                 return RedirectToAction("Index");
             }
             return View();
@@ -62,14 +63,38 @@ namespace BookShop.Controllers
             {
                 _db.Categories.Update(category);
                 await _db.SaveChangesAsync();
+                TempData["success"] = "Category updated successfully";
                 return RedirectToAction("Index");
             }
             return View();
         }
 
-        public IActionResult Delete()
+        public IActionResult Delete(int? id)
         {
-            return View();
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            Category? categoryFromDB = _db.Categories.Find(id);
+            if (categoryFromDB == null)
+            {
+                return NotFound();
+            }
+            return View(categoryFromDB);
+        }
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeletePOST(int? id)
+        {
+            Category? obj= await _db.Categories.FindAsync(id);
+            if(obj==null)
+            {
+                return NotFound();
+            }
+            _db.Categories.Remove(obj);
+            await _db.SaveChangesAsync();
+            TempData["success"] = "Category deleted successfully";
+            return RedirectToAction("Index");
+            
         }
     }
 }
