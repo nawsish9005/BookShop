@@ -42,10 +42,35 @@ namespace BookShop.Controllers
             return View();
         }
 
-        public IActionResult Edit() 
+        public IActionResult Edit(int? id) 
         {
+            if(id == null || id == 0)
+            {
+                return NotFound();
+            }
+            Category? categoryFromDB = _db.Categories.Find(id);
+            if(categoryFromDB == null)
+            {
+                return NotFound();
+            }
+            return View(categoryFromDB);
+        }
+
+        public async Task<IActionResult> Edit(Category category)
+        {
+            if (category.Name == category.DisplayOrder.ToString())
+            {
+                ModelState.AddModelError("DisplayOrder", "Display Order must be different from Category Name");
+            }
+            if (ModelState.IsValid)
+            {
+                _db.Categories.Update(category);
+                await _db.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
             return View();
         }
+
         public IActionResult Delete()
         {
             return View();
