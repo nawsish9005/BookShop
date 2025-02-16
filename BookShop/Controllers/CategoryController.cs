@@ -55,13 +55,9 @@ namespace BookShop.Controllers
             }
             return View(categoryFromDB);
         }
-
+        [HttpPost]
         public async Task<IActionResult> Edit(Category category)
         {
-            if (category.Name == category.DisplayOrder.ToString())
-            {
-                ModelState.AddModelError("DisplayOrder", "Display Order must be different from Category Name");
-            }
             if (ModelState.IsValid)
             {
                 _db.Categories.Update(category);
