@@ -20,8 +20,4 @@
     <ProjectReference Include="..\BookShop.Utility\BookShop.Utility.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Repository\" />
-  </ItemGroup>
-
 </Project>

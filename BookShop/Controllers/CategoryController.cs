@@ -1,4 +1,5 @@
 ﻿using BookShop.DataAccess.Data;
+using BookShop.DataAccess.IRepository;
 using BookShop.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -7,14 +8,14 @@ namespace BookShop.Controllers
 {
     public class CategoryController : Controller
     {
-        private readonly ApplicationDbContext _db;
-        public CategoryController(ApplicationDbContext db)
+        private readonly ICategoryRepository _categoryRepo;
+        public CategoryController(ICategoryRepository db)
         {
-            _db = db;
+            _categoryRepo = db;
         }
         public IActionResult Index()
         {
-            List<Category> objCategoryList = _db.Categories.ToList();
+            List<Category> objCategoryList = _categoryRepo.GetAll().ToList();
             return View(objCategoryList);
         }
 
@@ -23,7 +24,7 @@ namespace BookShop.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create(Category category)
+        public IActionResult Create(Category category)
         {
             if(category.Name==category.DisplayOrder.ToString())
             {
@@ -35,8 +36,8 @@ namespace BookShop.Controllers
             //}
             if (ModelState.IsValid)
             {
-                _db.Categories.Add(category);
-                await _db.SaveChangesAsync();
+                _categoryRepo.Add(category);
+                 _categoryRepo.Save();
                 TempData["success"] = "Category created successfully";
                 return RedirectToAction("Index");
             }
@@ -49,7 +50,7 @@ namespace BookShop.Controllers
             {
                 return NotFound();
             }
-            Category? categoryFromDB = _db.Categories.Find(id);
+            Category? categoryFromDB = _categoryRepo.Get(u=>u.Id==id);
             if(categoryFromDB == null)
             {
                 return NotFound();
@@ -57,12 +58,12 @@ namespace BookShop.Controllers
             return View(categoryFromDB);
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(Category category)
+        public IActionResult Edit(Category category)
         {
             if (ModelState.IsValid)
             {
-                _db.Categories.Update(category);
-                await _db.SaveChangesAsync();
+                _categoryRepo.Update(category);
+                _categoryRepo.Save();
                 TempData["success"] = "Category updated successfully";
                 return RedirectToAction("Index");
             }
@@ -75,7 +76,7 @@ namespace BookShop.Controllers
             {
                 return NotFound();
             }
-            Category? categoryFromDB = _db.Categories.Find(id);
+            Category? categoryFromDB = _categoryRepo.Get(u => u.Id == id);
             if (categoryFromDB == null)
             {
                 return NotFound();
@@ -83,15 +84,15 @@ namespace BookShop.Controllers
             return View(categoryFromDB);
         }
         [HttpPost, ActionName("Delete")]
-        public async Task<IActionResult> DeletePOST(int? id)
+        public IActionResult DeletePOST(int? id)
         {
-            Category? obj= await _db.Categories.FindAsync(id);
-            if(obj==null)
+            Category? obj= _categoryRepo.Get(u => u.Id == id);
+            if (obj==null)
             {
                 return NotFound();
             }
-            _db.Categories.Remove(obj);
-            await _db.SaveChangesAsync();
+            _categoryRepo.Remove(obj);
+            _categoryRepo.Save();
             TempData["success"] = "Category deleted successfully";
             return RedirectToAction("Index");
             

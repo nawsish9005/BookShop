@@ -5,13 +5,11 @@ VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShop", "BookShop\BookShop.csproj", "{80BAE08B-887B-4AFD-981D-2E43EDC2BEC8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShopRazor_temp", "BookShopRazor_temp\BookShopRazor_temp.csproj", "{BDAA7CFF-C433-4E62-86C5-9D750833F0C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShop.DataAccess", "BookShop.DataAccess\BookShop.DataAccess.csproj", "{6474A440-94AC-49B7-83D6-0060E4801E73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShop.DataAccess", "BookShop.DataAccess\BookShop.DataAccess.csproj", "{6474A440-94AC-49B7-83D6-0060E4801E73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShop.Models", "BookShop.Models\BookShop.Models.csproj", "{7DC5FC50-75B4-4DAA-A74A-B7286853204C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShop.Models", "BookShop.Models\BookShop.Models.csproj", "{7DC5FC50-75B4-4DAA-A74A-B7286853204C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShop.Utility", "BookShop.Utility\BookShop.Utility.csproj", "{8F553B86-BC9B-47A8-9C1D-03E4697944E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShop.Utility", "BookShop.Utility\BookShop.Utility.csproj", "{8F553B86-BC9B-47A8-9C1D-03E4697944E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{80BAE08B-887B-4AFD-981D-2E43EDC2BEC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80BAE08B-887B-4AFD-981D-2E43EDC2BEC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80BAE08B-887B-4AFD-981D-2E43EDC2BEC8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BDAA7CFF-C433-4E62-86C5-9D750833F0C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BDAA7CFF-C433-4E62-86C5-9D750833F0C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BDAA7CFF-C433-4E62-86C5-9D750833F0C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BDAA7CFF-C433-4E62-86C5-9D750833F0C0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6474A440-94AC-49B7-83D6-0060E4801E73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6474A440-94AC-49B7-83D6-0060E4801E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6474A440-94AC-49B7-83D6-0060E4801E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
