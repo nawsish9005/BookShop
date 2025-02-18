@@ -1,4 +1,5 @@
-﻿using BookShop.DataAccess.IRepository;
+﻿using BookShop.DataAccess.Data;
+using BookShop.DataAccess.IRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,17 @@ namespace BookShop.DataAccess.Repository
 {
     public class UnitOfWork : IUnitOfWork
     {
-        public ICategoryRepository CategoryRepository => throw new NotImplementedException();
+        private ApplicationDbContext _db;
+        public ICategoryRepository Category { get; private set; }
+        public UnitOfWork(ApplicationDbContext db)
+        {
+            _db = db;
+            Category = new CategoryRepository(_db);
+        }       
 
         public void Save()
         {
-            throw new NotImplementedException();
+            _db.SaveChanges();
         }
     }
 }
