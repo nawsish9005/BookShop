@@ -4,8 +4,9 @@ using BookShop.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace BookShop.Controllers
+namespace BookShop.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -26,7 +27,7 @@ namespace BookShop.Controllers
         [HttpPost]
         public IActionResult Create(Category category)
         {
-            if(category.Name==category.DisplayOrder.ToString())
+            if (category.Name == category.DisplayOrder.ToString())
             {
                 ModelState.AddModelError("DisplayOrder", "Display Order must be different from Category Name");
             }
@@ -44,14 +45,14 @@ namespace BookShop.Controllers
             return View();
         }
 
-        public IActionResult Edit(int? id) 
+        public IActionResult Edit(int? id)
         {
-            if(id == null || id == 0)
+            if (id == null || id == 0)
             {
                 return NotFound();
             }
-            Category? categoryFromDB = _unitOfWork.Category.Get(u=>u.Id==id);
-            if(categoryFromDB == null)
+            Category? categoryFromDB = _unitOfWork.Category.Get(u => u.Id == id);
+            if (categoryFromDB == null)
             {
                 return NotFound();
             }
@@ -86,8 +87,8 @@ namespace BookShop.Controllers
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePOST(int? id)
         {
-            Category? obj= _unitOfWork.Category.Get(u => u.Id == id);
-            if (obj==null)
+            Category? obj = _unitOfWork.Category.Get(u => u.Id == id);
+            if (obj == null)
             {
                 return NotFound();
             }
@@ -95,7 +96,7 @@ namespace BookShop.Controllers
             _unitOfWork.Save();
             TempData["success"] = "Category deleted successfully";
             return RedirectToAction("Index");
-            
+
         }
     }
 }

@@ -257,3 +257,5 @@ E:\filessss\BookShop\BookShop\obj\Debug\net8.0\refint\BookShop.dll
 E:\filessss\BookShop\BookShop\obj\Debug\net8.0\BookShop.pdb
 E:\filessss\BookShop\BookShop\obj\Debug\net8.0\BookShop.genruntimeconfig.cache
 E:\filessss\BookShop\BookShop\obj\Debug\net8.0\ref\BookShop.dll
+E:\filessss\BookShop\BookShop\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+E:\filessss\BookShop\BookShop\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
