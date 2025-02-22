@@ -1,6 +1,6 @@
 using BookShop.DataAccess.Data;
-using BookShop.DataAccess.IRepository;
 using BookShop.DataAccess.Repository;
+using BookShop.DataAccess.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

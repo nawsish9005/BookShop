@@ -7,17 +7,17 @@ using Microsoft.EntityFrameworkCore;
 namespace BookShop.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class CategoryController : Controller
+    public class ProductController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
-        public CategoryController(IUnitOfWork unitOfWork)
+        public ProductController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
         public IActionResult Index()
         {
-            List<Category> objCategoryList = _unitOfWork.Category.GetAll().ToList();
-            return View(objCategoryList);
+            List<Product> objProductList = _unitOfWork.Product.GetAll().ToList();
+            return View(objProductList);
         }
 
         public IActionResult Create()
@@ -25,21 +25,13 @@ namespace BookShop.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Create(Category category)
+        public IActionResult Create(Product product)
         {
-            if (category.Name == category.DisplayOrder.ToString())
-            {
-                ModelState.AddModelError("DisplayOrder", "Display Order must be different from Category Name");
-            }
-            //if(category.Name!=null && category.Name.ToLower()=="test")
-            //{
-            //       ModelState.AddModelError("", "Test is an invalid value");
-            //}
             if (ModelState.IsValid)
             {
-                _unitOfWork.Category.Add(category);
+                _unitOfWork.Product.Add(product);
                 _unitOfWork.Save();
-                TempData["success"] = "Category created successfully";
+                TempData["success"] = "Product created successfully";
                 return RedirectToAction("Index");
             }
             return View();
@@ -51,21 +43,21 @@ namespace BookShop.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Category? categoryFromDB = _unitOfWork.Category.Get(u => u.Id == id);
-            if (categoryFromDB == null)
+            Product? productFromDB = _unitOfWork.Product.Get(u => u.Id == id);
+            if (productFromDB == null)
             {
                 return NotFound();
             }
-            return View(categoryFromDB);
+            return View(productFromDB);
         }
         [HttpPost]
-        public IActionResult Edit(Category category)
+        public IActionResult Edit(Product product)
         {
             if (ModelState.IsValid)
             {
-                _unitOfWork.Category.Update(category);
+                _unitOfWork.Product.Update(product);
                 _unitOfWork.Save();
-                TempData["success"] = "Category updated successfully";
+                TempData["success"] = "Product updated successfully";
                 return RedirectToAction("Index");
             }
             return View();
@@ -77,24 +69,24 @@ namespace BookShop.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Category? categoryFromDB = _unitOfWork.Category.Get(u => u.Id == id);
-            if (categoryFromDB == null)
+            Product? productFromDB = _unitOfWork.Product.Get(u => u.Id == id);
+            if (productFromDB == null)
             {
                 return NotFound();
             }
-            return View(categoryFromDB);
+            return View(productFromDB);
         }
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePOST(int? id)
         {
-            Category? obj = _unitOfWork.Category.Get(u => u.Id == id);
+            Product? obj = _unitOfWork.Product.Get(u => u.Id == id);
             if (obj == null)
             {
                 return NotFound();
             }
-            _unitOfWork.Category.Remove(obj);
+            _unitOfWork.Product.Remove(obj);
             _unitOfWork.Save();
-            TempData["success"] = "Category deleted successfully";
+            TempData["success"] = "Product deleted successfully";
             return RedirectToAction("Index");
 
         }

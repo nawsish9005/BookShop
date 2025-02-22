@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookShop.DataAccess.IRepository
+namespace BookShop.DataAccess.Repository.IRepository
 {
     public interface IUnitOfWork
     {
         ICategoryRepository Category { get; }
+        IProductRepository Product { get; }
         void Save();
     }
 }
