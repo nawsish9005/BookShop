@@ -10,3 +10,4 @@ E:\filessss\BookShop\BookShop.Models\obj\Debug\net8.0\BookShop.Models.dll
 E:\filessss\BookShop\BookShop.Models\obj\Debug\net8.0\refint\BookShop.Models.dll
 E:\filessss\BookShop\BookShop.Models\obj\Debug\net8.0\BookShop.Models.pdb
 E:\filessss\BookShop\BookShop.Models\obj\Debug\net8.0\ref\BookShop.Models.dll
+E:\filessss\BookShop\BookShop.Models\obj\Debug\net8.0\BookShop.Models.csproj.AssemblyReference.cache
