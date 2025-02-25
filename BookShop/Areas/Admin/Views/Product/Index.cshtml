@@ -35,7 +35,7 @@
             <td>@objProductList.ISBN</td>
             <td>@objProductList.ListPrice</td>
             <td>@objProductList.Author</td>
-            <td></td>
+            <td>@objProductList.Category.Name</td>
             <td>
                 <div class="w-75 btn-group" role="group">
                         <a asp-controller="Product" asp-action="Upsert" asp-route-id="@objProductList.Id" class="btn btn-primary mx-2">
