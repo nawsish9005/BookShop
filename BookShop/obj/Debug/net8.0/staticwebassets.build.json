@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jiyIN2EySR3Oo1Cq6e4DKmN88gX7CQ/4pg6UzLgGOjA=",
+  "Hash": "hnbOrfY9H4xk42LCsA3zg52ch0vcxSaBKbJ+h9bNAsM=",
   "Source": "BookShop",
   "BasePath": "_content/BookShop",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "E:\\filessss\\BookShop\\BookShop\\wwwroot\\images\\product\\cfb04f3f-9215-4821-acc0-c5dcf8e3c8ae.jpg",
+      "SourceId": "BookShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\filessss\\BookShop\\BookShop\\wwwroot\\",
+      "BasePath": "_content/BookShop",
+      "RelativePath": "images/product/cfb04f3f-9215-4821-acc0-c5dcf8e3c8ae.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\product\\cfb04f3f-9215-4821-acc0-c5dcf8e3c8ae.jpg"
     },
     {
       "Identity": "E:\\filessss\\BookShop\\BookShop\\wwwroot\\js\\site.js",

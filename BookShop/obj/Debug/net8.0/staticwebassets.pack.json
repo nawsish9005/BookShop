@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "E:\\filessss\\BookShop\\BookShop\\wwwroot\\images\\product\\cfb04f3f-9215-4821-acc0-c5dcf8e3c8ae.jpg",
+      "PackagePath": "staticwebassets\\images\\product\\cfb04f3f-9215-4821-acc0-c5dcf8e3c8ae.jpg"
+    },
+    {
       "Id": "E:\\filessss\\BookShop\\BookShop\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
