@@ -130,18 +130,19 @@ namespace BookShop.Areas.Identity.Pages.Account
 
         public async Task OnGetAsync(string returnUrl = null)
         {
-           
-
-            //Input = new() {
-            //    RoleList = _roleManager.Roles.Select(x => x.Name).Select(i => new SelectListItem {
-            //        Text = i,
-            //        Value = i
-            //    }),
-            //    CompanyList = _unitOfWork.Company.GetAll().Select(i => new SelectListItem {
-            //        Text = i.Name,
-            //        Value = i.Id.ToString()
-            //    })
-            //};
+            Input = new()
+            {
+                RoleList = _roleManager.Roles.Select(x => x.Name).Select(i => new SelectListItem
+                {
+                    Text = i,
+                    Value = i
+                }),
+                CompanyList = _unitOfWork.Company.GetAll().Select(i => new SelectListItem
+                {
+                    Text = i.Name,
+                    Value = i.Id.ToString()
+                })
+            };
 
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
