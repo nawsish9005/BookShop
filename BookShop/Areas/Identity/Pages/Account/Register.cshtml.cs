@@ -165,9 +165,10 @@ namespace BookShop.Areas.Identity.Pages.Account
                 user.PostalCode = Input.PostalCode;
                 user.PhoneNumber = Input.PhoneNumber;
 
-                //if (Input.Role == SD.Role_Company) {
-                //    user.CompanyId=Input.CompanyId;
-                //}
+                if (Input.Role == SD.Role_Company)
+                {
+                    user.CompanyId = Input.CompanyId;
+                }
 
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
@@ -178,7 +179,7 @@ namespace BookShop.Areas.Identity.Pages.Account
                         await _userManager.AddToRoleAsync(user, Input.Role);
                     }
                     else {
-                        //await _userManager.AddToRoleAsync(user, SD.Role_Customer);
+                        await _userManager.AddToRoleAsync(user, SD.Role_Customer);
                     }
 
                     var userId = await _userManager.GetUserIdAsync(user);

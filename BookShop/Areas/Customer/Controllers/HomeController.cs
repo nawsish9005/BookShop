@@ -1,5 +1,6 @@
 using BookShop.DataAccess.Repository.IRepository;
 using BookShop.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -22,6 +23,7 @@ namespace BookShop.Areas.Customer.Controllers
             IEnumerable<Product> productList = _unitOfWork.Product.GetAll(includeProperties: "Category");
             return View(productList);
         }
+        [Authorize]
         public IActionResult Details(int productId)
         {
             Product product = _unitOfWork.Product.Get(u => u.Id == productId, includeProperties: "Category");
