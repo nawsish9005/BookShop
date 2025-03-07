@@ -40,13 +40,12 @@
     <ProjectReference Include="..\BookShop.DataAccess\BookShop.DataAccess.csproj" />
 	
     <ProjectReference Include="..\BookShop.Models\BookShop.Models.csproj" />
+	
+    <ProjectReference Include="..\BookShop.Utility\BookShop.Utility.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\images\product\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <None Include="Views\Shared\Components\ShoppingCart\Default.cshtml" />
     <None Include="wwwroot\js\product.js" />
   </ItemGroup>
 

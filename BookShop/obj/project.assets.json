@@ -9336,6 +9336,7 @@
     "net8.0": [
       "BookShop.DataAccess >= 1.0.0",
       "BookShop.Models >= 1.0.0",
+      "BookShop.Utility >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.MicrosoftAccount >= 8.0.5",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.0",
       "Microsoft.AspNetCore.Identity.UI >= 8.0.0",
@@ -9385,6 +9386,9 @@
             },
             "E:\\filessss\\BookShop\\BookShop.Models\\BookShop.Models.csproj": {
               "projectPath": "E:\\filessss\\BookShop\\BookShop.Models\\BookShop.Models.csproj"
+            },
+            "E:\\filessss\\BookShop\\BookShop.Utility\\BookShop.Utility.csproj": {
+              "projectPath": "E:\\filessss\\BookShop\\BookShop.Utility\\BookShop.Utility.csproj"
             }
           }
         }
