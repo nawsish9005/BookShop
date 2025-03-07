@@ -48,6 +48,6 @@ namespace BookShop.Models
         public Category Category { get; set; }
 
         [ValidateNever]
-        public string ProductImages { get; set; }
+        public List<ProductImage> ProductImages { get; set; }
     }
 }
