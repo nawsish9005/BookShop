@@ -16,15 +16,16 @@ namespace BookShop.Areas.Admin.Controllers
     public class ProductController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IWebHostEnvironment _hostingEnvironment;
-        public ProductController(IUnitOfWork unitOfWork, IWebHostEnvironment hostingEnvironment)
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        public ProductController(IUnitOfWork unitOfWork, IWebHostEnvironment webHostEnvironment)
         {
             _unitOfWork = unitOfWork;
-            _hostingEnvironment = hostingEnvironment;
+            _webHostEnvironment = webHostEnvironment;
         }
         public IActionResult Index()
         {
-            List<Product> objProductList = _unitOfWork.Product.GetAll(includeProperties:"Category").ToList();
+            List<Product> objProductList = _unitOfWork.Product.GetAll(includeProperties: "Category").ToList();
+
             return View(objProductList);
         }
 
@@ -47,9 +48,10 @@ namespace BookShop.Areas.Admin.Controllers
             else
             {
                 //update
-                productVM.Product = _unitOfWork.Product.Get(u => u.Id == id);
+                productVM.Product = _unitOfWork.Product.Get(u => u.Id == id, includeProperties: "ProductImages");
                 return View(productVM);
             }
+
         }
         [HttpPost]
         public IActionResult Upsert(ProductVM productVM, List<IFormFile> files)
@@ -67,9 +69,11 @@ namespace BookShop.Areas.Admin.Controllers
 
                 _unitOfWork.Save();
 
-                string wwwRootPath = _hostingEnvironment.WebRootPath;
-                if(files!=null)
+
+                string wwwRootPath = _webHostEnvironment.WebRootPath;
+                if (files != null)
                 {
+
                     foreach (IFormFile file in files)
                     {
                         string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
@@ -96,10 +100,16 @@ namespace BookShop.Areas.Admin.Controllers
                         productVM.Product.ProductImages.Add(productImage);
 
                     }
+
                     _unitOfWork.Product.Update(productVM.Product);
                     _unitOfWork.Save();
+
+
+
+
                 }
-                //_unitOfWork.Product.Add(productVM.Product);
+
+
                 TempData["success"] = "Product created/updated successfully";
                 return RedirectToAction("Index");
             }
@@ -114,6 +124,7 @@ namespace BookShop.Areas.Admin.Controllers
             }
         }
 
+
         public IActionResult DeleteImage(int imageId)
         {
             var imageToBeDeleted = _unitOfWork.ProductImage.Get(u => u.Id == imageId);
@@ -123,7 +134,7 @@ namespace BookShop.Areas.Admin.Controllers
                 if (!string.IsNullOrEmpty(imageToBeDeleted.ImageUrl))
                 {
                     var oldImagePath =
-                                   Path.Combine(_hostingEnvironment.WebRootPath,
+                                   Path.Combine(_webHostEnvironment.WebRootPath,
                                    imageToBeDeleted.ImageUrl.TrimStart('\\'));
 
                     if (System.IO.File.Exists(oldImagePath))
@@ -142,12 +153,15 @@ namespace BookShop.Areas.Admin.Controllers
         }
 
         #region API CALLS
+
         [HttpGet]
         public IActionResult GetAll()
         {
             List<Product> objProductList = _unitOfWork.Product.GetAll(includeProperties: "Category").ToList();
             return Json(new { data = objProductList });
         }
+
+
         [HttpDelete]
         public IActionResult Delete(int? id)
         {
@@ -158,7 +172,7 @@ namespace BookShop.Areas.Admin.Controllers
             }
 
             string productPath = @"images\products\product-" + id;
-            string finalPath = Path.Combine(_hostingEnvironment.WebRootPath, productPath);
+            string finalPath = Path.Combine(_webHostEnvironment.WebRootPath, productPath);
 
             if (Directory.Exists(finalPath))
             {
@@ -177,6 +191,7 @@ namespace BookShop.Areas.Admin.Controllers
 
             return Json(new { success = true, message = "Delete Successful" });
         }
+
         #endregion
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MAS5gCyePsNJCDjh42f0yC4UeFhuNKSc3+NNxX15k+8=",
+  "Hash": "nryTcOxJIz3ah9LWYlR+wOoNcvAWk6XqOQdcAcSJ1b8=",
   "Source": "BookShop",
   "BasePath": "_content/BookShop",
   "Mode": "Default",
@@ -1442,6 +1442,25 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\product-2\\6c2133da-211f-4ef1-90a9-dd1cf3b66f38.jpg"
     },
     {
+      "Identity": "E:\\filessss\\BookShop\\BookShop\\wwwroot\\images\\products\\product-2\\923b6901-1094-4253-b6f5-0e0e0f66e0a9.jpg",
+      "SourceId": "BookShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\filessss\\BookShop\\BookShop\\wwwroot\\",
+      "BasePath": "_content/BookShop",
+      "RelativePath": "images/products/product-2/923b6901-1094-4253-b6f5-0e0e0f66e0a9.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\product-2\\923b6901-1094-4253-b6f5-0e0e0f66e0a9.jpg"
+    },
+    {
       "Identity": "E:\\filessss\\BookShop\\BookShop\\wwwroot\\images\\products\\product-3\\1f36fa1f-7f9a-4b4f-84d2-eafbf69a6220.jpg",
       "SourceId": "BookShop",
       "SourceType": "Discovered",
@@ -1516,6 +1535,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\products\\product-4\\8be61614-113a-4dd5-a2ff-d1eb70e16f0b.jpg"
+    },
+    {
+      "Identity": "E:\\filessss\\BookShop\\BookShop\\wwwroot\\images\\products\\product-4\\d3a6b6b7-e8c7-406d-a8b8-ffdad0f4d819.jpg",
+      "SourceId": "BookShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\filessss\\BookShop\\BookShop\\wwwroot\\",
+      "BasePath": "_content/BookShop",
+      "RelativePath": "images/products/product-4/d3a6b6b7-e8c7-406d-a8b8-ffdad0f4d819.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\product-4\\d3a6b6b7-e8c7-406d-a8b8-ffdad0f4d819.jpg"
     },
     {
       "Identity": "E:\\filessss\\BookShop\\BookShop\\wwwroot\\images\\products\\product-5\\1cbca164-761a-4c55-9459-82d6f2c9e0c1.jpg",

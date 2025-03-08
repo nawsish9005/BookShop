@@ -45,6 +45,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Areas\Admin\Views\Company\Index.cshtml" />
+    <None Include="Areas\Admin\Views\Company\Upsert.cshtml" />
+    <None Include="Areas\Admin\Views\Order\Details.cshtml" />
+    <None Include="Areas\Admin\Views\Order\Index.cshtml" />
+    <None Include="Areas\Admin\Views\Order\PaymentConfirmation.cshtml" />
+    <None Include="Areas\Admin\Views\User\Index.cshtml" />
+    <None Include="Areas\Admin\Views\User\RoleManagment.cshtml" />
+    <None Include="Areas\Customer\Views\Cart\Index.cshtml" />
+    <None Include="Areas\Customer\Views\Cart\OrderConfirmation.cshtml" />
+    <None Include="Areas\Customer\Views\Cart\Summary.cshtml" />
     <None Include="Views\Shared\Components\ShoppingCart\Default.cshtml" />
     <None Include="wwwroot\js\product.js" />
   </ItemGroup>
