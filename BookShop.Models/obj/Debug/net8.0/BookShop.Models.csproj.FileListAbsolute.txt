@@ -1,0 +1,13 @@
+E:\filessss\BookShop\BookShop.Models\bin\Debug\net8.0\BookShop.Models.deps.json
+E:\filessss\BookShop\BookShop.Models\bin\Debug\net8.0\BookShop.Models.dll
+E:\filessss\BookShop\BookShop.Models\bin\Debug\net8.0\BookShop.Models.pdb
+E:\filessss\BookShop\BookShop.Models\obj\Debug\net8.0\BookShop.Models.csproj.AssemblyReference.cache
+E:\filessss\BookShop\BookShop.Models\obj\Debug\net8.0\BookShop.Models.GeneratedMSBuildEditorConfig.editorconfig
+E:\filessss\BookShop\BookShop.Models\obj\Debug\net8.0\BookShop.Models.AssemblyInfoInputs.cache
+E:\filessss\BookShop\BookShop.Models\obj\Debug\net8.0\BookShop.Models.AssemblyInfo.cs
+E:\filessss\BookShop\BookShop.Models\obj\Debug\net8.0\BookShop.Models.csproj.CoreCompileInputs.cache
+E:\filessss\BookShop\BookShop.Models\obj\Debug\net8.0\BookShop.Models.sourcelink.json
+E:\filessss\BookShop\BookShop.Models\obj\Debug\net8.0\BookShop.Models.dll
+E:\filessss\BookShop\BookShop.Models\obj\Debug\net8.0\refint\BookShop.Models.dll
+E:\filessss\BookShop\BookShop.Models\obj\Debug\net8.0\BookShop.Models.pdb
+E:\filessss\BookShop\BookShop.Models\obj\Debug\net8.0\ref\BookShop.Models.dll
